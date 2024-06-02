@@ -1,0 +1,212 @@
+---
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+	<nav class="navbar-logos">
+		<div class="logo">
+			<img src="../../public/img/480px-Processing_Foundation_2021_logo 1.svg"/>
+			<h2 style="color: #a75cff;">Processing Foundation</h2>
+		</div>
+		<div class="logo">
+			<img src="../../public/img/Processing_2021_logo 2.svg"/>
+			<h2 style="color: #0068ff;">Processing</h2>
+		</div>
+		<div class="logo">
+			<img src="../../public/img/P5.js_icon 1.svg"/>
+			<h2 style="color: #ee1c5d;">p5.js</h2>
+		</div>
+		<div class="logo">
+			<img src="../../public/img/Processing_Android_2021_logo 1.svg"/>
+			<h2 style="color: #99c900;">Processing Android</h2>
+		</div>
+		<div class="logo">
+			<img src="../../public/img/Processing_Python_2021_logo 1.svg"/>
+			<h2 style="color: #299f98;">Processing Python</h2>
+		</div>
+	</nav>
+
+	<nav class="navbar">
+		<div class="logo-navbar">
+			<img src="../../public/img/Processing_2021_logo 2.svg"/>
+			<h2>Processing</h2>
+		</div>
+		<div class="menu-toggle" >
+			<svg viewBox="0 0 24 24" class="menu-icon" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+				<path d="M3 12h18M3 6h18M3 18h18"></path>
+			</svg>
+		</div>
+		
+		<div class="internal-links">
+			<HeaderLink href="/">Download</HeaderLink>
+			<HeaderLink href="/blog">Documentation</HeaderLink>
+			<HeaderLink href="https://www.google.com/" >Learn</HeaderLink>
+			<HeaderLink href="https://github.com/">Teach</HeaderLink>
+			<HeaderLink href="https://www.facebook.com/">About</HeaderLink>
+			<HeaderLink href="https://x.com/">Donate</HeaderLink>
+		</div>
+		<div class="search">
+			<input type="search" class="search-input" placeholder="search">
+			<span class="search-btn">
+			  <svg viewBox="0 0 16 16" aria-hidden="true">
+				<path
+				  fill="currentColor"
+				  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+			  </svg>
+			</span>
+		  </div>
+	</nav>
+</header>
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
+		font-weight: normal;
+	}
+
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	nav a {
+		padding: 1em 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+	}
+	.navbar-logos {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		width: 33%;
+	}
+	.logo {
+		display: flex;
+		align-items: center;
+		width: 15%;
+		margin: 0.5em
+	}
+	.logo img {
+		width: 1em;
+		height: 1em;
+	}
+	.logo h2 {
+		margin-left: 0.3em;
+		margin-right: 0.3em;
+		font-size: 0.47em;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+	.navbar {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		width: 100%;
+	}
+	.logo-navbar {
+		display: flex;
+		align-items: center;
+		width: 7%;
+	}
+	.internal-links {
+		display: flex;
+		margin: 0;
+		width: 45%;
+		font-size: 0.9em;
+	}
+	.search {
+		position: relative;
+		width: 230px; 
+		margin: 20px;
+	}
+
+	.search-input {
+		width: 100%;
+		padding: 10px;
+		font-size: 16px;
+		border: 1px solid #ccc;
+		border-radius: 60px;
+		box-sizing: border-box;
+	}
+
+	.search-btn {
+		position: absolute;
+		top: -4px;
+		right: 3px;
+		padding: 8px;
+		cursor: pointer;
+	}
+
+	.search-btn svg {
+		width: 16px;
+		height: 33px;
+		fill: #666;
+	}
+
+	.search-btn:hover svg {
+		fill: #333;
+	}
+
+	.menu-toggle {
+		cursor: pointer;
+		display: none;
+	}
+	.menu-toggle svg {
+		width: 24px;
+		height: 24px;
+		fill: #333;
+	}
+
+	@media only screen and (max-width: 768px) {
+		.navbar-logos {
+		  flex-direction: row;
+		  align-items: center;
+		}
+		.logo {
+		  width: 10%;
+		  margin: 0.5em auto;
+		}
+		.logo h2 {
+		  display: none;
+		}
+		.navbar {
+		  flex-direction: row;
+		  align-items: center;
+		}
+		.logo-navbar {
+		  display: none;
+	    }
+		.menu-toggle {
+		  display: block; 
+		}
+		.internal-links {
+        display: none;
+        flex-direction: column;
+		}
+		.internal-links.active {
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: white;
+			z-index: 100; 
+		}	
+  }
+</style>
